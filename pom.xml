@@ -45,6 +45,24 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>fabric8-maven-plugin</artifactId> 
+        <version>4.3.1</version>
+        <configuration>
+          <generator>
+            <includes>
+              <include>quarkus</include>
+            </includes>
+            <config>
+              <quarkus>
+                <from>registry.access.redhat.com/openjdk/openjdk-11-rhel8</from>
+              </quarkus>
+            </config>
+          </generator>
+          <image>registry.access.redhat.com/openjdk/openjdk-11-rhel8</image>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
         <version>${quarkus.version}</version>

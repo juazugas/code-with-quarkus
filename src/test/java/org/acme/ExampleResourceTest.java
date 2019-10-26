@@ -15,7 +15,16 @@ public class ExampleResourceTest {
           .when().get("/hello")
           .then()
              .statusCode(200)
-             .body(is("hello"));
+             .body(is("hello world"));
+    }
+
+    @Test
+    public void testHelloEndpointWithParam() {
+        given()
+          .when().get("/hello?name=Mario")
+          .then()
+            .statusCode(200)
+            .body(is("hello Mario"));
     }
 
 }
